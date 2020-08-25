@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MESA DE PARTES MUNICIPALIDAD DE SHILLA</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- PARA INGRESAR SOLO NÚMEROS -->
+    <script type="text/javascript">
+    
+        function val_num(event){
+            if (event.charCode>=48 && event.charCode<=57) {
+
+                    return true;
+            }
+            return false;
+        }
+    </script>  
+</head>
+<body>
+    <section class="form_wrap">
+        <section class="cantact_info">
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+                <h2>MESA DE PARTES<br>DE LA<br>MUNICIPALIDAD DISTRITAL DE SHILLA</h2>
+            </section>
+            <section class="info_items">
+                <p><span class="fa fa-envelope"></span> mesadepartesmunishilla@gmail.com</p>
+                <p><span class="fa fa-mobile"></span> +(51) 987654321</p>
+            </section>
+        </section>
+        <form action="enviar.php" method="post" class="form_contact" enctype="multipart/form-data">
+            <h2>Envia un mensaje</h2>
+            <div class="user_info">
+                <label for="names">Nombres y Apellidos</label>
+                <input type="text" id="names" name="nombre" style="text-transform: uppercase;" required>
+
+                <label for="phone">Celular</label>
+                <input type="text" onkeypress="return val_num(event);" maxlength="9" id="phone" name="telefono" required >
+
+                <label for="email">Correo electronico</label>
+                <input type="email" id="email" name="correo" required>
+
+                <label for="mensaje">Asunto</label>
+                <textarea id="asunto" name="asunto" style="text-transform: uppercase;" required></textarea>
+
+                <label for="archivo">DOCUMENTO</label>
+                <input type="file" name="archivo" accept=".pdf,.jpg" id="archivo" required>
+                <font color="red">
+                <li>El formato debe ser pdf o jpg.</li>
+                <li>El Tamaño máximo del archivo debe ser menor o igual a 5MB.</li>
+                </font><br>
+                <input type="submit" value="Enviar" onclick="alerta.php">
+
+                </div>
+
+            </form>
+        </section>
+
+</body>
+</html>
